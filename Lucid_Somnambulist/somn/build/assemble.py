@@ -298,7 +298,16 @@ def assemble_descriptors_from_handles(handle_input, desc: tuple, sub_mask=None):
     ### Trying to assemble descriptors for ALL conditions for specific amine/bromide couplings ###
     elif prophetic is True:
         solv_base_cond = ["1_a", "1_b", "1_c", "2_a", "2_b", "2_c", "3_a", "3_b", "3_c"]
-        allcats = [str(f + 1) for f in range(21) if f != 14]
+        # allcats = [str(f + 1) for f in range(21) if f != 14] #Original catlyst structures
+        allcats = ['1000171-05-0', '1185899-00-6', '10', '8', 'AdCyBrettPhos',
+       'AdJohnPhos', '14', '16', '17', 'CyBippyPhos', '18', 'DavePhos',
+       'EPhos', '5', '19', '1', '9', 'MePhos', 'PhCPhos', '3', '6',
+       'PhenCarPhosCy', 'PhenCarPhosEt', 'PhenCarPhosPh', 'PhenCarPhosiPr',
+       'PhtBuCPhos', '7', '20', 'RuPhos_Hybrid', '21', 'TrippyPhos',
+       'TrixiePhos', 'VPhos', '2', 'XPhosSO3Na', '11', 'cataCXiumPICy', '12',
+       'cataCXiumPIntB', '13', 'cataCXiumPOMetB', 'cataCXiumPtBu',
+       'mmCF3PhCPhos', '4', 'sSPhos', 'tBuBippyPhos', 'tBuDavePhos',
+       'tBuMePhos', 'tBuSPhos', 'tBuXPhos'] # These are all the current 50 available within the library
         s = "{}_{}_{}"
         exp_handles = []
         for combination in product(rxn_hndls, allcats, solv_base_cond):
